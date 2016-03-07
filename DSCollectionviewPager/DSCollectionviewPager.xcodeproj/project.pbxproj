@@ -13,6 +13,10 @@
 		144EC64E1C8D353C00DE77EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144EC64C1C8D353C00DE77EA /* Main.storyboard */; };
 		144EC6501C8D353C00DE77EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144EC64F1C8D353C00DE77EA /* Assets.xcassets */; };
 		144EC6531C8D353C00DE77EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144EC6511C8D353C00DE77EA /* LaunchScreen.storyboard */; };
+		144EC65F1C8D39C200DE77EA /* DSCollectionviewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 144EC65E1C8D39C200DE77EA /* DSCollectionviewPager.m */; };
+		144EC6611C8D39E900DE77EA /* DSCollectionviewPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144EC6601C8D39E900DE77EA /* DSCollectionviewPagerView.xib */; };
+		144EC6651C8D569B00DE77EA /* PagerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144EC6631C8D569B00DE77EA /* PagerCollectionViewCell.m */; };
+		144EC6661C8D569B00DE77EA /* PagerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144EC6641C8D569B00DE77EA /* PagerCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,12 @@
 		144EC64F1C8D353C00DE77EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		144EC6521C8D353C00DE77EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		144EC6541C8D353C00DE77EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144EC65D1C8D39C200DE77EA /* DSCollectionviewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCollectionviewPager.h; sourceTree = "<group>"; };
+		144EC65E1C8D39C200DE77EA /* DSCollectionviewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionviewPager.m; sourceTree = "<group>"; };
+		144EC6601C8D39E900DE77EA /* DSCollectionviewPagerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSCollectionviewPagerView.xib; sourceTree = "<group>"; };
+		144EC6621C8D569B00DE77EA /* PagerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagerCollectionViewCell.h; sourceTree = "<group>"; };
+		144EC6631C8D569B00DE77EA /* PagerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagerCollectionViewCell.m; sourceTree = "<group>"; };
+		144EC6641C8D569B00DE77EA /* PagerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PagerCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +93,30 @@
 		144EC65A1C8D35F300DE77EA /* DSCollectionviewPagerKit */ = {
 			isa = PBXGroup;
 			children = (
+				144EC65B1C8D398200DE77EA /* Calsses */,
+				144EC65C1C8D398200DE77EA /* Views */,
 			);
 			path = DSCollectionviewPagerKit;
+			sourceTree = "<group>";
+		};
+		144EC65B1C8D398200DE77EA /* Calsses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calsses;
+			sourceTree = "<group>";
+		};
+		144EC65C1C8D398200DE77EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				144EC65D1C8D39C200DE77EA /* DSCollectionviewPager.h */,
+				144EC65E1C8D39C200DE77EA /* DSCollectionviewPager.m */,
+				144EC6601C8D39E900DE77EA /* DSCollectionviewPagerView.xib */,
+				144EC6621C8D569B00DE77EA /* PagerCollectionViewCell.h */,
+				144EC6631C8D569B00DE77EA /* PagerCollectionViewCell.m */,
+				144EC6641C8D569B00DE77EA /* PagerCollectionViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +178,9 @@
 			files = (
 				144EC6531C8D353C00DE77EA /* LaunchScreen.storyboard in Resources */,
 				144EC6501C8D353C00DE77EA /* Assets.xcassets in Resources */,
+				144EC6611C8D39E900DE77EA /* DSCollectionviewPagerView.xib in Resources */,
 				144EC64E1C8D353C00DE77EA /* Main.storyboard in Resources */,
+				144EC6661C8D569B00DE77EA /* PagerCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +194,8 @@
 				144EC64B1C8D353C00DE77EA /* ViewController.m in Sources */,
 				144EC6481C8D353C00DE77EA /* AppDelegate.m in Sources */,
 				144EC6451C8D353C00DE77EA /* main.m in Sources */,
+				144EC6651C8D569B00DE77EA /* PagerCollectionViewCell.m in Sources */,
+				144EC65F1C8D39C200DE77EA /* DSCollectionviewPager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
