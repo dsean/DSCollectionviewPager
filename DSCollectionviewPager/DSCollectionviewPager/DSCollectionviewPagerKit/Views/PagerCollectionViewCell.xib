@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,8 +12,37 @@
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMV-Lh-Iyx">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i83-ag-dl9">
+                                <rect key="frame" x="21" y="14" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="i83-ag-dl9" firstAttribute="centerY" secondItem="GMV-Lh-Iyx" secondAttribute="centerY" id="1I8-9z-1Tf"/>
+                            <constraint firstItem="i83-ag-dl9" firstAttribute="centerX" secondItem="GMV-Lh-Iyx" secondAttribute="centerX" id="1IW-Vm-I2m"/>
+                        </constraints>
+                    </view>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" red="0.41176470590000003" green="0.63921568630000003" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="GMV-Lh-Iyx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Shi-yM-SxE"/>
+                <constraint firstItem="GMV-Lh-Iyx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WcX-LW-3sJ"/>
+                <constraint firstAttribute="bottom" secondItem="GMV-Lh-Iyx" secondAttribute="bottom" id="hDM-sL-CHk"/>
+                <constraint firstAttribute="trailing" secondItem="GMV-Lh-Iyx" secondAttribute="trailing" id="zFQ-f2-WIy"/>
+            </constraints>
+            <connections>
+                <outlet property="pageCount" destination="i83-ag-dl9" id="ePg-2J-Tx2"/>
+                <outlet property="pageView" destination="GMV-Lh-Iyx" id="hET-Ut-gGy"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

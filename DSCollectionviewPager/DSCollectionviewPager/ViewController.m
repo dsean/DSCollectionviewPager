@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "DSCollectionviewPager.h"
+#import "View1.h"
+#import "View2.h"
+#import "View3.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) DSCollectionviewPager *pager;
+@property (weak, nonatomic) IBOutlet UIView *pagerView;
 
 @end
 
@@ -16,12 +23,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSMutableArray *pagers = [NSMutableArray array];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    [pagers addObject:[[View1 alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 100)]];
+    [pagers addObject:[[View2 alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)]];
+    [pagers addObject:[[View3 alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 300)]];
+    self.pager = [[DSCollectionviewPager alloc] initWithArrayView:pagers andWithFrame:self.pagerView.bounds];
+    [[self pagerView] addSubview:self.pager];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    // View is always upwards.
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

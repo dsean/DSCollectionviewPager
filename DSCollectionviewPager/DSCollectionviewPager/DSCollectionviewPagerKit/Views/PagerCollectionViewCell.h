@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PagerCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIView *pageView;
+@property (weak, nonatomic) IBOutlet UILabel *pageCount;
 
 @end

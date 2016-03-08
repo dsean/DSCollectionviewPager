@@ -11,16 +11,30 @@
 
 @interface DSCollectionviewPager () <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (strong, nonatomic) NSMutableArray *page;
+
 @end
 
 @implementation DSCollectionviewPager
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"DSCollectionviewPagerView" owner:nil options:nil];
         DSCollectionviewPager *dSCollectionviewPager = [views lastObject];
+        self = dSCollectionviewPager;
+        self.frame = frame;
+        return self;
+    }
+    return self;
+}
+
+- (id)initWithArrayView:(NSArray *)arrayView andWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"DSCollectionviewPagerView" owner:nil options:nil];
+        DSCollectionviewPager *dSCollectionviewPager = [views lastObject];
+        dSCollectionviewPager.page = [[NSMutableArray alloc] initWithArray:arrayView];
         self = dSCollectionviewPager;
         self.frame = frame;
         return self;
@@ -42,28 +56,22 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return [self.page count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CalendarWeekCollectionViewCell *cell = (CalendarWeekCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CalendarWeekCollectionViewCell" forIndexPath:indexPath];
-    DateManarger *dateManarger = [DateManarger sharedDateManarger];
-    if (dateManarger.status == DSCALENDAR_STYLE_WEEK) {
-        cell.currentWeek = [self.calendar week:[[DateManarger sharedDateManarger] seletedDate]];
-    }
-    else {
-        cell.currentWeek = indexPath.item + 1;
-    }
-    [cell reloadUI];
-    cell.calendar = self.calendar;
-    cell.calendar.calendar = self.calendar.calendar;
+    PagerCollectionViewCell *cell = (PagerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PagerCollectionViewCell" forIndexPath:indexPath];
+    UIView *page = self.page[indexPath.item];
+    [cell addSubview: page];
+    
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    return CGSizeMake(screenWidth, 42);
+     UIView *page = self.page[indexPath.item];
+    return CGSizeMake(screenWidth, page.frame.size.height);
 }
 
 @end

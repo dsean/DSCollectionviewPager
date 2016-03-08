@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *pagerCollectionView;
 
+- (id)initWithArrayView:(NSArray *)arrayView andWithFrame:(CGRect)frame;
 - (void)reloadUI;
 
 @end
